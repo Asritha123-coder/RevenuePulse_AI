@@ -1,0 +1,86 @@
+# ==========================
+# Python
+# ==========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Virtual Environment
+venv/
+.env/
+.venv/
+
+# Environment Variables
+.env
+.env.*
+
+# ==========================
+# Node.js / React
+# ==========================
+frontend/node_modules/
+frontend/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ==========================
+# Logs
+# ==========================
+logs/
+*.log
+
+# ==========================
+# Database
+# ==========================
+*.db
+*.sqlite3
+
+# ==========================
+# ML Models
+# ==========================
+models/
+*.pkl
+*.joblib
+
+# ==========================
+# Generated Reports
+# ==========================
+reports/*.csv
+reports/*.json
+reports/*.pdf
+reports/ml/
+
+# ==========================
+# Processed Data
+# ==========================
+datasets/processed/
+
+# ==========================
+# IDE
+# ==========================
+.vscode/
+.idea/
+
+# ==========================
+# OS Files
+# ==========================
+.DS_Store
+Thumbs.db
+
+# ==========================
+# Build
+# ==========================
+build/
+dist/
+
+# ==========================
+# Temporary Files
+# ==========================
+*.tmp
+*.temp
