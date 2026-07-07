@@ -24,7 +24,7 @@ function StatusBadge({ status }: { status: RowStatus | string }) {
     success: { icon: CheckCircle, bg: 'bg-emerald-100 dark:bg-emerald-900/30', text: 'text-emerald-700 dark:text-emerald-300', label: 'Success' },
     warning: { icon: AlertTriangle, bg: 'bg-amber-100 dark:bg-amber-900/30', text: 'text-amber-700 dark:text-amber-300', label: 'Warning' },
     error: { icon: XCircle, bg: 'bg-red-100 dark:bg-red-900/30', text: 'text-red-700 dark:text-red-300', label: 'Error' },
-  }[status as RowStatus] || { icon: Clock, bg: 'bg-slate-100', text: 'text-slate-700', label: status };
+  }[status as RowStatus] || { icon: Clock, bg: 'bg-slate-100 dark:bg-slate-800', text: 'text-slate-700 dark:text-slate-200', label: status };
 
   const Icon = cfg.icon;
   return (
@@ -55,7 +55,7 @@ export default function ETLMonitor() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">ETL Monitor</h1>
-          <p className="text-slate-500 mt-1">Pipeline execution history, load metrics, and data ingestion status.</p>
+          <p className="text-slate-500 dark:text-slate-400 mt-1">Pipeline execution history, load metrics, and data ingestion status.</p>
         </div>
         <Button onClick={() => runMutation.mutate()} disabled={runMutation.isPending} className="flex items-center gap-2">
           <Play className="w-4 h-4" />
@@ -76,7 +76,7 @@ export default function ETLMonitor() {
               <div className="flex items-center gap-3">
                 <div className={`p-2.5 rounded-lg ${bg} ${color}`}><Icon className="w-5 h-5" /></div>
                 <div>
-                  <p className="text-xs text-slate-500 font-medium">{label}</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">{label}</p>
                   <p className="text-2xl font-bold">{value}</p>
                 </div>
               </div>
@@ -94,7 +94,7 @@ export default function ETLMonitor() {
               <thead>
                 <tr className="border-b bg-slate-50 dark:bg-slate-800/50">
                   {['Table', 'Rows Loaded', 'Failed', 'Duration', 'Status', 'Timestamp'].map(h => (
-                    <th key={h} className="text-left py-3 px-6 font-semibold text-slate-600 dark:text-slate-400">{h}</th>
+                    <th key={h} className="text-left py-3 px-6 font-semibold text-slate-600 dark:text-slate-400 dark:text-slate-400">{h}</th>
                   ))}
                 </tr>
               </thead>
@@ -106,7 +106,7 @@ export default function ETLMonitor() {
                     <td className="py-3 px-6">{row.failed > 0 ? <span className="text-red-600 font-semibold">{row.failed}</span> : row.failed}</td>
                     <td className="py-3 px-6 font-mono">{row.duration}</td>
                     <td className="py-3 px-6"><StatusBadge status={row.status} /></td>
-                    <td className="py-3 px-6 text-slate-400 text-xs">{row.timestamp}</td>
+                    <td className="py-3 px-6 text-slate-400 dark:text-slate-400 text-xs">{row.timestamp}</td>
                   </tr>
                 ))}
               </tbody>

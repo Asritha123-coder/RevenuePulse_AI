@@ -30,7 +30,7 @@ export default function CustomerIntelligence() {
     <div className="space-y-8">
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Customer Intelligence</h1>
-        <p className="text-slate-500 mt-1">Customer segmentation, retention, and lifetime value analysis.</p>
+        <p className="text-slate-500 dark:text-slate-400 mt-1">Customer segmentation, retention, and lifetime value analysis.</p>
       </div>
 
       {/* KPI Row */}
@@ -46,7 +46,7 @@ export default function CustomerIntelligence() {
               <div className="flex items-center gap-3">
                 <div className={`p-2.5 rounded-lg ${bg} ${color}`}><Icon className="w-5 h-5" /></div>
                 <div>
-                  <p className="text-xs text-slate-500 font-medium">{label}</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">{label}</p>
                   <p className="text-2xl font-bold">{value}</p>
                 </div>
               </div>

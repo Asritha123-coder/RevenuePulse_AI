@@ -76,7 +76,7 @@ export default function MLIntelligence() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">ML Intelligence</h1>
-          <p className="text-slate-500 mt-1">Model performance, accuracy metrics, and prediction engines.</p>
+          <p className="text-slate-500 dark:text-slate-400 mt-1">Model performance, accuracy metrics, and prediction engines.</p>
         </div>
         <Button onClick={handleRetrain} variant="outline" className="flex items-center gap-2">
           <RefreshCw className="w-4 h-4" />
@@ -111,7 +111,7 @@ export default function MLIntelligence() {
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="text-xs text-slate-500 mb-4">{description}</p>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">{description}</p>
                 {isLoading ? (
                   <div className="grid grid-cols-3 gap-3">
                     {[1, 2, 3].map(i => <div key={i} className="h-12 bg-slate-100 dark:bg-slate-800 animate-pulse rounded-lg" />)}
@@ -125,7 +125,7 @@ export default function MLIntelligence() {
                     ].map(({ label, value }) => (
                       <div key={label} className="text-center p-2 rounded-lg bg-slate-50 dark:bg-slate-800">
                         <div className="text-lg font-bold">{value}</div>
-                        <div className="text-xs text-slate-400 mt-0.5">{label}</div>
+                        <div className="text-xs text-slate-400 dark:text-slate-400 mt-0.5">{label}</div>
                       </div>
                     ))}
                   </div>

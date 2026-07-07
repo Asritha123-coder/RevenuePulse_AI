@@ -76,7 +76,7 @@ export default function ReportCenter() {
     <div className="space-y-8">
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Report Center</h1>
-        <p className="text-slate-500 mt-1">Generate and download enterprise-grade reports across all intelligence modules.</p>
+        <p className="text-slate-500 dark:text-slate-400 mt-1">Generate and download enterprise-grade reports across all intelligence modules.</p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -89,7 +89,7 @@ export default function ReportCenter() {
               </div>
             </CardHeader>
             <CardContent className="flex-1 flex flex-col">
-              <p className="text-sm text-slate-500 flex-1 mb-4">{description}</p>
+              <p className="text-sm text-slate-500 dark:text-slate-400 flex-1 mb-4">{description}</p>
               <div className="flex gap-2 flex-wrap">
                 {['CSV', 'Excel', 'PDF'].map(fmt => (
                   <Button
@@ -122,13 +122,13 @@ export default function ReportCenter() {
             ].map((item, i) => (
               <div key={i} className="flex items-center justify-between py-2 border-b last:border-0">
                 <div className="flex items-center gap-3">
-                  <FileText className="w-4 h-4 text-slate-400" />
+                  <FileText className="w-4 h-4 text-slate-400 dark:text-slate-400" />
                   <div>
                     <p className="text-sm font-medium">{item.name}</p>
-                    <p className="text-xs text-slate-400">{item.date} · {item.size}</p>
+                    <p className="text-xs text-slate-400 dark:text-slate-400">{item.date} · {item.size}</p>
                   </div>
                 </div>
-                <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
+                <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 dark:text-slate-400">
                   {item.format}
                 </span>
               </div>

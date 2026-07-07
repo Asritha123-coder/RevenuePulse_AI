@@ -32,7 +32,7 @@ export default function SalesIntelligence() {
     <div className="space-y-8">
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Sales Intelligence</h1>
-        <p className="text-slate-500 mt-1">Pipeline analysis, deal tracking, and sales rep performance.</p>
+        <p className="text-slate-500 dark:text-slate-400 mt-1">Pipeline analysis, deal tracking, and sales rep performance.</p>
       </div>
 
       {/* KPI Metrics */}
@@ -46,7 +46,7 @@ export default function SalesIntelligence() {
             <CardContent className="pt-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-slate-500 font-medium">{label}</p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">{label}</p>
                   <p className="text-3xl font-bold mt-2">{value}</p>
                 </div>
                 <div className={`p-3 rounded-xl bg-slate-50 dark:bg-slate-800 ${color}`}>
@@ -87,7 +87,7 @@ export default function SalesIntelligence() {
             <div className="space-y-4">
               {MOCK_LEADERBOARD.map((rep, i) => (
                 <div key={rep.name} className="flex items-center gap-3">
-                  <span className="text-sm font-bold text-slate-400 w-4">{i + 1}</span>
+                  <span className="text-sm font-bold text-slate-400 dark:text-slate-400 w-4">{i + 1}</span>
                   <img src={rep.avatar} alt={rep.name} className="w-8 h-8 rounded-full border" />
                   <div className="flex-1 min-w-0">
                     <p className="font-medium text-sm truncate">{rep.name}</p>
@@ -100,7 +100,7 @@ export default function SalesIntelligence() {
                   </div>
                   <div className="text-right">
                     <p className="text-sm font-semibold">{rep.deals} deals</p>
-                    <p className="text-xs text-slate-400">${(rep.value / 1e6).toFixed(1)}M</p>
+                    <p className="text-xs text-slate-400 dark:text-slate-400">${(rep.value / 1e6).toFixed(1)}M</p>
                   </div>
                 </div>
               ))}

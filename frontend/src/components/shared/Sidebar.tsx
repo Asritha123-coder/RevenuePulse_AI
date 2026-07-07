@@ -1,18 +1,18 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { 
-  LayoutDashboard, 
-  TrendingUp, 
-  Users, 
-  Target, 
-  Megaphone, 
-  Box, 
-  LifeBuoy, 
-  Activity, 
-  Brain, 
-  Bot, 
-  Database, 
-  ShieldCheck, 
+import {
+  LayoutDashboard,
+  TrendingUp,
+  Users,
+  Target,
+  Megaphone,
+  Box,
+  LifeBuoy,
+  Activity,
+  Brain,
+  Bot,
+  Database,
+  ShieldCheck,
   FileBarChart,
   Settings
 } from 'lucide-react';
@@ -56,16 +56,16 @@ const NAVIGATION_GROUPS = [
 
 export function Sidebar() {
   return (
-    <aside className="w-64 flex-shrink-0 bg-sidebar-bg text-sidebar-fg hidden md:flex flex-col border-r border-slate-800">
-      <div className="h-16 flex items-center px-6 border-b border-slate-800">
+    <aside className="w-64 flex-shrink-0 bg-sidebar-bg text-sidebar-fg hidden md:flex flex-col border-r border-border">
+      <div className="h-16 flex items-center px-6 border-b border-border">
         <Activity className="w-6 h-6 text-brand-500 mr-2" />
         <span className="font-bold text-lg tracking-tight">RevenuePulse <span className="text-brand-500">AI</span></span>
       </div>
-      
-      <div className="flex-1 overflow-y-auto py-4 scrollbar-thin scrollbar-thumb-slate-700">
+
+      <div className="flex-1 overflow-y-auto py-4">
         {NAVIGATION_GROUPS.map((group, i) => (
           <div key={i} className="mb-6">
-            <h3 className="px-6 text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
+            <h3 className="px-6 text-xs font-semibold text-sidebar-muted uppercase tracking-wider mb-2">
               {group.title}
             </h3>
             <ul className="space-y-1">
@@ -77,8 +77,8 @@ export function Sidebar() {
                       cn(
                         "flex items-center px-6 py-2 text-sm font-medium transition-colors border-l-2",
                         isActive
-                          ? "bg-sidebar-hover text-white border-brand-500"
-                          : "text-slate-300 border-transparent hover:bg-sidebar-hover hover:text-white"
+                          ? "bg-sidebar-hover text-sidebar-fg border-brand-500"
+                          : "text-sidebar-muted border-transparent hover:bg-sidebar-hover hover:text-sidebar-fg"
                       )
                     }
                   >
@@ -92,15 +92,15 @@ export function Sidebar() {
         ))}
       </div>
 
-      <div className="p-4 border-t border-slate-800">
+      <div className="p-4 border-t border-border">
         <NavLink
           to="/settings"
           className={({ isActive }) =>
             cn(
               "flex items-center px-2 py-2 text-sm font-medium rounded-md transition-colors",
               isActive
-                ? "bg-sidebar-hover text-white"
-                : "text-slate-300 hover:bg-sidebar-hover hover:text-white"
+                ? "bg-sidebar-hover text-sidebar-fg"
+                : "text-sidebar-muted hover:bg-sidebar-hover hover:text-sidebar-fg"
             )
           }
         >

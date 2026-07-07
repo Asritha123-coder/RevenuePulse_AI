@@ -31,7 +31,7 @@ export default function SupportIntelligence() {
     <div className="space-y-8">
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Support Intelligence</h1>
-        <p className="text-slate-500 mt-1">Ticket analysis, resolution times, and customer satisfaction scores.</p>
+        <p className="text-slate-500 dark:text-slate-400 mt-1">Ticket analysis, resolution times, and customer satisfaction scores.</p>
       </div>
 
       {/* KPIs */}
@@ -47,7 +47,7 @@ export default function SupportIntelligence() {
               <div className="flex items-center gap-3">
                 <div className={`p-2.5 rounded-lg ${bg} ${color}`}><Icon className="w-5 h-5" /></div>
                 <div>
-                  <p className="text-xs text-slate-500 font-medium">{label}</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">{label}</p>
                   <p className="text-2xl font-bold">{value}</p>
                 </div>
               </div>

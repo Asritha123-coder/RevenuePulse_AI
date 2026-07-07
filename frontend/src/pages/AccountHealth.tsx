@@ -61,7 +61,7 @@ export default function AccountHealth() {
     <div className="space-y-8">
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Account Health</h1>
-        <p className="text-slate-500 mt-1">ML-powered customer health scoring and risk segmentation.</p>
+        <p className="text-slate-500 dark:text-slate-400 mt-1">ML-powered customer health scoring and risk segmentation.</p>
       </div>
 
       {/* Summary KPIs */}
@@ -71,7 +71,7 @@ export default function AccountHealth() {
             <div className="flex items-center gap-3">
               <div className="p-2.5 rounded-lg bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600"><CheckCircle className="w-5 h-5" /></div>
               <div>
-                <p className="text-xs text-slate-500 font-medium">Healthy Accounts</p>
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Healthy Accounts</p>
                 <p className="text-3xl font-bold text-emerald-600">{healthy}</p>
               </div>
             </div>
@@ -82,7 +82,7 @@ export default function AccountHealth() {
             <div className="flex items-center gap-3">
               <div className="p-2.5 rounded-lg bg-amber-50 dark:bg-amber-900/20 text-amber-600"><AlertTriangle className="w-5 h-5" /></div>
               <div>
-                <p className="text-xs text-slate-500 font-medium">Medium Risk</p>
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Medium Risk</p>
                 <p className="text-3xl font-bold text-amber-600">{medRisk}</p>
               </div>
             </div>
@@ -93,7 +93,7 @@ export default function AccountHealth() {
             <div className="flex items-center gap-3">
               <div className="p-2.5 rounded-lg bg-red-50 dark:bg-red-900/20 text-red-600"><XCircle className="w-5 h-5" /></div>
               <div>
-                <p className="text-xs text-slate-500 font-medium">Critical Accounts</p>
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Critical Accounts</p>
                 <p className="text-3xl font-bold text-red-600">{critical}</p>
               </div>
             </div>
@@ -109,11 +109,11 @@ export default function AccountHealth() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b bg-slate-50 dark:bg-slate-800/50">
-                  <th className="text-left py-3 px-6 font-semibold text-slate-600 dark:text-slate-400">Account</th>
-                  <th className="text-left py-3 px-4 font-semibold text-slate-600 dark:text-slate-400">Industry</th>
-                  <th className="text-left py-3 px-4 font-semibold text-slate-600 dark:text-slate-400">Status</th>
-                  <th className="text-left py-3 px-4 font-semibold text-slate-600 dark:text-slate-400 min-w-[160px]">Health Score</th>
-                  <th className="text-left py-3 px-4 font-semibold text-slate-600 dark:text-slate-400">MRR</th>
+                  <th className="text-left py-3 px-6 font-semibold text-slate-600 dark:text-slate-400 dark:text-slate-400">Account</th>
+                  <th className="text-left py-3 px-4 font-semibold text-slate-600 dark:text-slate-400 dark:text-slate-400">Industry</th>
+                  <th className="text-left py-3 px-4 font-semibold text-slate-600 dark:text-slate-400 dark:text-slate-400">Status</th>
+                  <th className="text-left py-3 px-4 font-semibold text-slate-600 dark:text-slate-400 dark:text-slate-400 min-w-[160px]">Health Score</th>
+                  <th className="text-left py-3 px-4 font-semibold text-slate-600 dark:text-slate-400 dark:text-slate-400">MRR</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
@@ -122,10 +122,10 @@ export default function AccountHealth() {
                     <td className="py-4 px-6">
                       <div>
                         <div className="font-medium">{acc.company_name}</div>
-                        <div className="text-xs text-slate-400">{acc.account_id}</div>
+                        <div className="text-xs text-slate-400 dark:text-slate-400">{acc.account_id}</div>
                       </div>
                     </td>
-                    <td className="py-4 px-4 text-slate-600 dark:text-slate-400">{acc.industry}</td>
+                    <td className="py-4 px-4 text-slate-600 dark:text-slate-400 dark:text-slate-400">{acc.industry}</td>
                     <td className="py-4 px-4"><HealthBadge category={acc.health_category} /></td>
                     <td className="py-4 px-4 w-48"><ScoreBar score={acc.health_score} /></td>
                     <td className="py-4 px-4 font-semibold">${acc.monthly_spend.toLocaleString()}</td>

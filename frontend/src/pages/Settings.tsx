@@ -29,7 +29,7 @@ export default function Settings() {
     <div className="space-y-8 max-w-3xl">
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Settings</h1>
-        <p className="text-slate-500 mt-1">Application preferences, profile, and system health status.</p>
+        <p className="text-slate-500 dark:text-slate-400 mt-1">Application preferences, profile, and system health status.</p>
       </div>
 
       {/* Theme */}
@@ -51,7 +51,7 @@ export default function Settings() {
                 className={`flex-1 flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all ${
                   theme === value
                     ? 'border-brand-500 bg-brand-50 dark:bg-brand-900/20 text-brand-700 dark:text-brand-300'
-                    : 'border-border hover:border-slate-400 dark:hover:border-slate-500 text-slate-600 dark:text-slate-400'
+                    : 'border-border hover:border-slate-400 dark:hover:border-slate-500 text-slate-600 dark:text-slate-400 dark:text-slate-400'
                 }`}
               >
                 <Icon className="w-5 h-5" />
@@ -72,11 +72,11 @@ export default function Settings() {
           <img
             src={user?.avatar || 'https://api.dicebear.com/7.x/avataaars/svg?seed=default'}
             alt="Avatar"
-            className="w-20 h-20 rounded-full border-4 border-brand-500/20 bg-slate-100"
+            className="w-20 h-20 rounded-full border-4 border-brand-500/20 bg-slate-100 dark:bg-slate-800"
           />
           <div>
             <h3 className="text-xl font-bold">{user?.name}</h3>
-            <p className="text-slate-500">{user?.email}</p>
+            <p className="text-slate-500 dark:text-slate-400">{user?.email}</p>
             <span className="mt-2 inline-block text-xs font-semibold px-2.5 py-1 rounded-full bg-brand-100 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300">
               {user?.role}
             </span>
@@ -123,10 +123,10 @@ export default function Settings() {
           ].map(({ label, icon: Icon, loading, online, detail }) => (
             <div key={label} className="flex items-center justify-between py-3 border-b last:border-0">
               <div className="flex items-center gap-3">
-                <Icon className="w-5 h-5 text-slate-400" />
+                <Icon className="w-5 h-5 text-slate-400 dark:text-slate-400" />
                 <div>
                   <p className="font-medium text-sm">{label}</p>
-                  <p className="text-xs text-slate-400">{loading ? 'Checking...' : detail}</p>
+                  <p className="text-xs text-slate-400 dark:text-slate-400">{loading ? 'Checking...' : detail}</p>
                 </div>
               </div>
               {loading ? (
@@ -155,7 +155,7 @@ export default function Settings() {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-medium">Backend API URL</p>
-              <p className="text-xs text-slate-400">Used by all dashboard API calls</p>
+              <p className="text-xs text-slate-400 dark:text-slate-400">Used by all dashboard API calls</p>
             </div>
             <span className="font-mono text-sm bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-md">
               http://localhost:8000/api

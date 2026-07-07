@@ -136,7 +136,7 @@ export default function AICopilot() {
           <Sparkles className="w-7 h-7 text-brand-500" />
           AI Business Copilot
         </h1>
-        <p className="text-slate-500 mt-1">Ask anything about your revenue, customers, or performance — powered by live data.</p>
+        <p className="text-slate-500 dark:text-slate-400 mt-1">Ask anything about your revenue, customers, or performance — powered by live data.</p>
       </div>
 
       <Card className="flex-1 flex flex-col overflow-hidden">
@@ -156,7 +156,7 @@ export default function AICopilot() {
                   : 'bg-slate-100 dark:bg-slate-800 text-foreground rounded-tl-none'
               )}>
                 {renderContent(msg.content)}
-                <div className={cn('text-xs mt-2', msg.role === 'user' ? 'text-brand-200' : 'text-slate-400')}>
+                <div className={cn('text-xs mt-2', msg.role === 'user' ? 'text-brand-200' : 'text-slate-400 dark:text-slate-400')}>
                   {msg.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                 </div>
               </div>
@@ -193,7 +193,7 @@ export default function AICopilot() {
                 key={q}
                 onClick={() => sendMessage(q)}
                 disabled={isLoading}
-                className="flex-shrink-0 text-xs px-3 py-1.5 rounded-full bg-slate-100 hover:bg-brand-50 hover:text-brand-700 dark:bg-slate-800 dark:hover:bg-brand-900/30 dark:hover:text-brand-300 transition-colors font-medium border border-transparent hover:border-brand-200 dark:hover:border-brand-700 whitespace-nowrap disabled:opacity-50"
+                className="flex-shrink-0 text-xs px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-brand-50 hover:text-brand-700 dark:bg-slate-800 dark:hover:bg-brand-900/30 dark:hover:text-brand-300 transition-colors font-medium border border-transparent hover:border-brand-200 dark:hover:border-brand-700 whitespace-nowrap disabled:opacity-50"
               >
                 {q}
               </button>

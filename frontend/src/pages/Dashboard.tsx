@@ -52,7 +52,7 @@ export default function Dashboard() {
     <div className="space-y-6 animate-in fade-in duration-500">
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Executive Dashboard</h1>
-        <p className="text-slate-500 mt-2">Welcome back. Here's a high-level overview of RevenuePulse AI performance.</p>
+        <p className="text-slate-500 dark:text-slate-400 mt-2">Welcome back. Here's a high-level overview of RevenuePulse AI performance.</p>
       </div>
 
       {/* KPI GRID */}
@@ -73,7 +73,7 @@ export default function Dashboard() {
           </CardHeader>
           <CardContent className="pl-0">
             {trendLoading ? (
-              <div className="h-[300px] flex items-center justify-center text-slate-400">Loading chart data...</div>
+              <div className="h-[300px] flex items-center justify-center text-slate-400 dark:text-slate-400">Loading chart data...</div>
             ) : (
               <div className="h-[300px] w-full mt-4">
                 <ResponsiveContainer width="100%" height="100%">
@@ -94,7 +94,7 @@ export default function Dashboard() {
                     />
                     <Tooltip 
                       formatter={(value: any) => [formatCurrency(Number(value)), "Revenue"]}
-                      labelClassName="text-slate-900 font-medium"
+                      labelClassName="text-slate-900 dark:text-white font-medium"
                     />
                     <Area type="monotone" dataKey="revenue" stroke="#3b82f6" strokeWidth={3} fillOpacity={1} fill="url(#colorRev)" />
                   </AreaChart>
@@ -111,7 +111,7 @@ export default function Dashboard() {
           </CardHeader>
           <CardContent>
             {funnelLoading ? (
-               <div className="h-[300px] flex items-center justify-center text-slate-400">Loading chart data...</div>
+               <div className="h-[300px] flex items-center justify-center text-slate-400 dark:text-slate-400">Loading chart data...</div>
             ) : (
               <div className="h-[300px] w-full mt-4">
                 <ResponsiveContainer width="100%" height="100%">
@@ -136,8 +136,8 @@ function MetricCard({ title, value, icon: Icon, loading }: { title: string, valu
   return (
     <Card>
       <CardHeader className="flex flex-row items-center justify-between pb-2">
-        <CardTitle className="text-sm font-medium text-slate-500">{title}</CardTitle>
-        <Icon className="w-4 h-4 text-slate-400" />
+        <CardTitle className="text-sm font-medium text-slate-500 dark:text-slate-400">{title}</CardTitle>
+        <Icon className="w-4 h-4 text-slate-400 dark:text-slate-400" />
       </CardHeader>
       <CardContent>
         {loading ? (

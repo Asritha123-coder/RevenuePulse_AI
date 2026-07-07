@@ -46,7 +46,7 @@ export default function DataQuality() {
     <div className="space-y-8">
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Data Quality Dashboard</h1>
-        <p className="text-slate-500 mt-1">Validation results, missing values, and data integrity scores across all tables.</p>
+        <p className="text-slate-500 dark:text-slate-400 mt-1">Validation results, missing values, and data integrity scores across all tables.</p>
       </div>
 
       {/* Overall Quality Score */}
@@ -62,7 +62,7 @@ export default function DataQuality() {
               <span className="absolute text-2xl font-bold">{overall}</span>
             </div>
             <p className="text-sm font-medium mt-2">Overall Quality Score</p>
-            <p className="text-xs text-slate-400">Across 8 tables</p>
+            <p className="text-xs text-slate-400 dark:text-slate-400">Across 8 tables</p>
           </CardContent>
         </Card>
 
@@ -75,7 +75,7 @@ export default function DataQuality() {
             <CardContent className="pt-6 flex flex-col justify-center h-full">
               <Icon className={`w-8 h-8 ${color} mb-2`} />
               <p className="text-3xl font-bold">{value}</p>
-              <p className="text-sm text-slate-500 mt-1">{label}</p>
+              <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">{label}</p>
             </CardContent>
           </Card>
         ))}
@@ -110,7 +110,7 @@ export default function DataQuality() {
               <thead>
                 <tr className="border-b bg-slate-50 dark:bg-slate-800/50">
                   {['Status', 'Check', 'Table', 'Severity', 'Issues'].map(h => (
-                    <th key={h} className="text-left py-3 px-6 font-semibold text-slate-600 dark:text-slate-400">{h}</th>
+                    <th key={h} className="text-left py-3 px-6 font-semibold text-slate-600 dark:text-slate-400 dark:text-slate-400">{h}</th>
                   ))}
                 </tr>
               </thead>
@@ -119,13 +119,13 @@ export default function DataQuality() {
                   <tr key={i} className="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
                     <td className="py-3 px-6"><StatusIcon status={row.status} /></td>
                     <td className="py-3 px-6 font-medium">{row.check}</td>
-                    <td className="py-3 px-6 font-mono text-sm text-slate-500">{row.table}</td>
+                    <td className="py-3 px-6 font-mono text-sm text-slate-500 dark:text-slate-400">{row.table}</td>
                     <td className="py-3 px-6">
                       <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${
                         row.severity === 'CRITICAL' ? 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-300' :
                         row.severity === 'ERROR' ? 'bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300' :
                         row.severity === 'WARNING' ? 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300' :
-                        'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300'
+                        'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:bg-slate-800 dark:text-slate-300'
                       }`}>{row.severity}</span>
                     </td>
                     <td className="py-3 px-6">

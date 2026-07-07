@@ -14,7 +14,7 @@ function SectionTitle({ title, subtitle }: { title: string; subtitle?: string })
   return (
     <div className="mb-1">
       <h2 className="text-xl font-bold tracking-tight">{title}</h2>
-      {subtitle && <p className="text-sm text-slate-500 mt-0.5">{subtitle}</p>}
+      {subtitle && <p className="text-sm text-slate-500 dark:text-slate-400 mt-0.5">{subtitle}</p>}
     </div>
   );
 }
@@ -46,7 +46,7 @@ export default function RevenueIntelligence() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Revenue Intelligence</h1>
-          <p className="text-slate-500 mt-1">Deep-dive revenue analytics, trends, and geographic distribution.</p>
+          <p className="text-slate-500 dark:text-slate-400 mt-1">Deep-dive revenue analytics, trends, and geographic distribution.</p>
         </div>
         <div className="flex items-center gap-2 text-sm text-emerald-600 font-medium bg-emerald-50 dark:bg-emerald-900/30 px-3 py-1.5 rounded-full">
           <TrendingUp className="w-4 h-4" />
